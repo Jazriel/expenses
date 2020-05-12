@@ -1,0 +1,29 @@
+.firebaseui-card-content {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.54);
+    padding: 1rem;
+}
+
+.firebaseui-idp-list {
+    list-style: none;
+}
+
+.firebaseui-list-item {
+    height: 3rem;
+}
+
+.firebaseui-idp-icon {
+    height: 3rem;
+}
+
+.firebaseui-idp-text-short {
+    display: none;
+}
+
+.firebaseui-idp-button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}

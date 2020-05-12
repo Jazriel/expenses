@@ -1,0 +1,59 @@
+{
+    "user": {
+        "uid": "9Q4r5KUjYWduiMTSjMp167U8i1p1",
+        "displayName": "Javier Martínez",
+        "photoURL": "https://lh3.googleusercontent.com/a-/AOh14Gi_mmzAhM4itEomENT6rbOtyrFoNdTk7t_HTn9loUg",
+        "email": "javyermartinez@gmail.com",
+        "emailVerified": true,
+        "phoneNumber": null,
+        "isAnonymous": false,
+        "tenantId": null,
+        "providerData": [
+            {
+                "uid": "115709342148310900410",
+                "displayName": "Javier Martínez",
+                "photoURL": "https://lh3.googleusercontent.com/a-/AOh14Gi_mmzAhM4itEomENT6rbOtyrFoNdTk7t_HTn9loUg",
+                "email": "javyermartinez@gmail.com",
+                "phoneNumber": null,
+                "providerId": "google.com"
+            }
+        ],
+        "apiKey": "AIzaSyAOg4cLIb52Zh6juQqJKxm6b44Y742dcbw",
+        "appName": "[DEFAULT]-firebaseui-temp",
+        "authDomain": "exp-dev-2ff70.firebaseapp.com",
+        "stsTokenManager": {
+            "apiKey": "AIzaSyAOg4cLIb52Zh6juQqJKxm6b44Y742dcbw",
+            "refreshToken": "AE0u-NdBBXiTlnF8hx5q3nV7wS7CvQfcXnN8mopkV2W8m4MP24mUzY7iSLp4QhVufJplWyCTd9Ajd3vn_mPLo21_TJtgGx4E7SMJgQSiRg4Ho6NrG_qbbbprgALQmQQR-U5Az0APMNk5tI6aDsjQS7CQBUcSyeNGfUu2JkicYPf3-WBAZmKGsNMbutU0_9Ztin7C470UOwA-tXSEoN7kKCKznbPjyem8c3iirIjuynpxEdnYaKmGskg75m5VWcRPlhulfaPrLPEHXDLBexcFs-tUooACQ6If-bQgFFk2Ua_6ZxGgf8WKYAb0M4aKvAmgmSusc3MjBl5MNe-usqn2TQP4nUJPkfF-Pvx2RhEqwd6DsPBL6clvHzg7_8uZA1foyuKlsHS7SQMDPX2qg4PILrOmN_3YKfASgUp5iPmoI2eVTLKViStzKCA",
+            "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg4ODQ4YjVhZmYyZDUyMDEzMzFhNTQ3ZDE5MDZlNWFhZGY2NTEzYzgiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiSmF2aWVyIE1hcnTDrW5leiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaV9tbXpBaE00aXRFb21FTlQ2cmJPdHlyRm9OZFRrN3RfSFRuOWxvVWciLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwLWRldi0yZmY3MCIsImF1ZCI6ImV4cC1kZXYtMmZmNzAiLCJhdXRoX3RpbWUiOjE1ODg5Mjg0NjQsInVzZXJfaWQiOiI5UTRyNUtVallXZHVpTVRTak1wMTY3VThpMXAxIiwic3ViIjoiOVE0cjVLVWpZV2R1aU1UU2pNcDE2N1U4aTFwMSIsImlhdCI6MTU4ODkyODQ2NCwiZXhwIjoxNTg4OTMyMDY0LCJlbWFpbCI6Imphdnllcm1hcnRpbmV6QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE1NzA5MzQyMTQ4MzEwOTAwNDEwIl0sImVtYWlsIjpbImphdnllcm1hcnRpbmV6QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.TGqCNEj2c1AaEyhJBbZZ2YOM4X6_JYBcM2bubxWs4ZrbU6Eu1cX2dNL1DVb4_F9rp7pSsX7J6K17a3Hhu1ZZ002-8P3sCMMwtIqux-XRO4ByzfPBl_IpQPZXFCmNJnudnlgSkDNtawf-t5hrDhiEqTULiR77it-WS3yI9Focv0QSFZo5VfuqPn5F7xrqBMsUWa12ZREgo5vufaFAAD0jdt1sjLbwoxV8E03R94vqm3ZbWYi57e-DLBFWqxhqtfz--nQMGB3TAAoHFAdzTrLmA1HiAJeqyOglkZktJ4DuAuqDtsy7c1v4KLqyKVu9FzMPiUX2_GHj0KAYqnY7Rq3eqw",
+            "expirationTime": 1588932064000
+        },
+        "redirectEventId": null,
+        "lastLoginAt": "1588928464692",
+        "createdAt": "1588927086440",
+        "multiFactor": {
+            "enrolledFactors": []
+        }
+    },
+    "credential": {
+        "providerId": "google.com",
+        "signInMethod": "google.com",
+        "oauthIdToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc0YmQ4NmZjNjFlNGM2Y2I0NTAxMjZmZjRlMzhiMDY5YjhmOGYzNWMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiMTA3NDI2ODMxMTQwNC11cnNwb25wZHYwNXUxNHVkOXAzdW8yNW9iOG1iMnM0NC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjEwNzQyNjgzMTE0MDQtdXJzcG9ucGR2MDV1MTR1ZDlwM3VvMjVvYjhtYjJzNDQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTU3MDkzNDIxNDgzMTA5MDA0MTAiLCJlbWFpbCI6Imphdnllcm1hcnRpbmV6QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoibDlWcVV2cVRLWjluNVpfdHJpTDNEUSIsImlhdCI6MTU4ODkyODQ2NCwiZXhwIjoxNTg4OTMyMDY0fQ.iSu0v6xL-9mvEe7Pf-ZS2L_ueZVVd-Zb4F3vH_DPp5medUqmLJmzRTXDA7nP-VsAaa2-VfEkCJVM1rfFwqqy-8Eed7aIq-KyLIjf83A1IVByJhw051HWyksXz6jnLtNCWkBRSc7kQRhDFwoJ18_aCg--5-Z133JlW2Sq3kKPTjjjOe-tyVAdgRmFsi9C1Uso4CLCZ7jlOv-eEt0ByWNL84HKw8WkXwOpovuseYfglzcWPMB3CWZ74A6JSM1iDajdUo_N8YsJPoGaYDigBoq4BiAjiTb6dgrV24U21cS-oCtRAPd6IYc9UnbMNI1Y4_cD6Bu6PdSOKlT0_RrM3Q2cFA",
+        "oauthAccessToken": "ya29.a0Ae4lvC0V93q4ZR3jNJrhW2B7JeaDWA_rzXymjb7pFOIh606BUz29flkViySjDyuiDXO5vZ6WIpj1M8mTqJs25Lz2Ajr7w4g3S5t8UpD2ftbMGbrTIoXhJY8JpkesST1ARYUMuAtxgc-ESA6S3OfnsbaRYlc8t3yMgVo"
+    },
+    "operationType": "signIn",
+    "additionalUserInfo": {
+        "providerId": "google.com",
+        "isNewUser": false,
+        "profile": {
+            "name": "Javier Martínez",
+            "granted_scopes": "openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",
+            "id": "115709342148310900410",
+            "verified_email": true,
+            "given_name": "Javier",
+            "locale": "en-GB",
+            "family_name": "Martínez",
+            "email": "javyermartinez@gmail.com",
+            "picture": "https://lh3.googleusercontent.com/a-/AOh14Gi_mmzAhM4itEomENT6rbOtyrFoNdTk7t_HTn9loUg"
+        }
+    }
+}
