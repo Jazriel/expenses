@@ -1,7 +1,18 @@
-import { combineReducers } from 'redux';
+import {combineReducers, createStore} from 'redux';
 
-import user from './userStateState';
+import {userReducer, userActions} from './userState';
+import {expensesReducer, expensesActions } from './expensesState';
 
-export default combineReducers({
-    user,
+const rootReducer = combineReducers({
+    user: userReducer,
+    expenses: expensesReducer,
 });
+
+const store = createStore(rootReducer);
+
+export const actionCreators = Object.freeze({
+    ...userActions,
+    ...expensesActions,
+}) 
+
+export {store as default};

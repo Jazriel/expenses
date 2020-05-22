@@ -1,28 +1,37 @@
-import React, {useState} from 'react';
-
 import {DatePicker} from '@material-ui/pickers';
 import {Button, TextField, Typography} from '@material-ui/core';
 import {Add} from '@material-ui/icons';
+import React, {useContext, useState} from 'react';
+import moment from 'moment';
+
+import {NotificationsContext} from '../notifications/notifications';
+
 
 export default ({onSubmit}) => {
     const [name, setName] = useState('');
     const [amount, setAmount] = useState(0);
     const [category, setCategory] = useState('');
     const [info, setInfo] = useState('');
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState(moment().format('L'));
+
+    const alert = useContext(NotificationsContext);
 
     const useSetter = (setter) => (e) => setter(e.target.value);
 
     const onSubmit_ = (synthE) => {
-        onSubmit({name, amount, category, info, date});
+        synthE.preventDefault();
 
+        onSubmit({name, amount, category, info, date})
+            .then(() => alert({message: 'Expense added', severity: 'success'}))
+            .catch(() => alert({message: 'Technical issue', severity: 'error'}));
+
+        // this should work along with new FormState but they don't :shrug:
+        synthE.target.reset();
         setName('');
         setAmount('');
         setCategory('');
         setInfo('');
-        setDate(new Date());
-        synthE.target.reset();
-        synthE.preventDefault();
+        setDate(moment().format('L'));
     }
 
     return (

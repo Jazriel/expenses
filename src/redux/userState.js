@@ -3,33 +3,26 @@ const actions = {
     clearUser: 'CLEAR_USER',
 }
 
-const user = (state = {user: undefined}, action) => {
+const userReducer = (state = {}, action) => {
     switch (action.type) {
-      case 'ADD_TODO':
-        return [
-          ...state,
-          {
-            id: action.id,
-            text: action.text,
-            completed: false
-          }
-        ]
-      case 'TOGGLE_TODO':
-        return state.map(todo =>
-          (todo.id === action.id)
-            ? {...todo, completed: !todo.completed}
-            : todo
-        )
-      default:
-        return state
+        case actions.setUser:
+            return {...action.payload};
+        case actions.clearUser:
+            return {};
+        default:
+            return state;
     }
-  }
+}
 
-  const actionCreators = {
+const userActions = Object.freeze({
+    setUser: (user) => ({type: actions.setUser, payload: user}),
+    clearUser: () => ({type: actions.clearUser}),
+});
 
-  }
-  
-  const userSelector = (state) => state.user;
+const userSelector = (state) => state.user;
 
-  export default todos
-  
+export {
+    userActions,
+    userReducer,
+    userSelector,
+};

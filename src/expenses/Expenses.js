@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Table,
   TableBody,
@@ -13,9 +11,11 @@ import {
   UnfoldMore,
   UnfoldLess,
 } from '@material-ui/icons';
+import React, {useMemo} from 'react';
+import {useSelector} from 'react-redux';
 import { useTable, useGroupBy, useExpanded } from 'react-table';
 
-import FakeData from '../fake-data/fake-data';
+import {expensesSelector} from '../redux/expensesState';
 
 
 function ExpensesTable({ columns, data }) {
@@ -77,11 +77,11 @@ function ExpensesTable({ columns, data }) {
         })}
       </TableBody>
     </Table>
-  )
+  );
 }
 
 function Expenses() {
-    const columns = React.useMemo(
+    const columns = useMemo(
         () => [
             {
                 Header: 'Name',
@@ -99,7 +99,7 @@ function Expenses() {
             },
             {
                 Header: 'Date',
-                accessor: ({date}) => date.toLocaleDateString(),
+                accessor: ({date}) => date.format('DD/MM/YYYY'),
                 aggregate: (values) => {
                 let min = values[0] || 0;
                 let max = values[0] || 0;
@@ -126,13 +126,13 @@ function Expenses() {
         []
     );
 
-  const data = React.useMemo(() => FakeData, [])
+  const expenses = useSelector(expensesSelector);
 
   return (
     <div>
-      <ExpensesTable columns={columns} data={data} />
+      <ExpensesTable columns={columns} data={expenses} />
     </div>
-  )
+  );
 }
 
 export default Expenses;

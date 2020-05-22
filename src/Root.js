@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {
-  Redirect, 
   Route, 
   Switch, 
 } from 'react-router-dom';
@@ -11,15 +10,16 @@ import LoggedIn from './logged-in/LoggedIn';
 import Expenses from './expenses/Expenses';
 import Historic from './historic/Historic';
 import MiniDrawer from './mini-drawer/MiniDrawer';
+import {addExpense} from './firebase';
+import {actionCreators} from './redux';
+import {userSelector} from './redux/userState';
 
 function Root() {
-  const [user, setUser] = useState({});
-  const [redirect, setRedirect] = useState(null);
+  const user = useSelector(userSelector);
+  const dispatch = useDispatch();
   
-
   return (
-    <MiniDrawer title='Expenses' user={user}>
-      {redirect}
+    <MiniDrawer title='Expenses'>
       <Switch>
         <Route exact path='/'>
         </Route>
@@ -27,8 +27,10 @@ function Root() {
           <LoggedIn/>
         </Route>
         <Route path='/expenses/add'>
-          <AddExpenses onSubmit={() => {
-            // addExpense
+          <AddExpenses onSubmit={(expense) => {
+            return addExpense(user.uid, expense).then(() => {
+              dispatch(actionCreators.addExpense(expense));
+            });
           }} />
         </Route>
         <Route path='/expenses'>

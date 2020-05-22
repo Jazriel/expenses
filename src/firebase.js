@@ -55,14 +55,16 @@ const config = {
 
 
 const db = firebaseApp.firestore();
-const getUserQuery = (uid) => db.collection('users').doc(uid).get();
-const getUserExpensesQuery = (uid) => db.collection('expenses').doc(uid).get();
+const userPreparedQuery = (uid) => db.doc(`users/${uid}`);
+const getExpenses = (uid) => db.collection(`users/${uid}/expenses`).get();
+const addExpense = (uid, expense) => db.collection(`users/${uid}/expenses`).add(expense);
 
 export {
     firebaseApp,
     config as uiConfig,
     ui as firebaseUi,
-    getUserQuery,
-    getUserExpensesQuery,
+    userPreparedQuery,
+    getExpenses,
+    addExpense,
 };
  

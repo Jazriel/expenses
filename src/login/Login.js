@@ -1,11 +1,15 @@
+import moment from 'moment';
+import React, { useContext } from 'react';
+import {useDispatch} from 'react-redux';
 
-import React from 'react';
-
+import {actionCreators} from '../redux';
+import {firebaseUi, uiConfig, getExpenses} from '../firebase';
 import './Login.css';
-import {firebaseUi, uiConfig} from '../firebase'
-import { ClickAwayListener } from '@material-ui/core';
+import { NotificationsContext } from '../notifications/notifications';
 
-export default ({className, onClickAway}) => {
+export default ({className, onLoginCallback}) => {
+    const dispatch = useDispatch();
+    const alert = useContext(NotificationsContext);
 
     const config = {...uiConfig, callbacks: {
         ...uiConfig.callbacks,
@@ -13,15 +17,22 @@ export default ({className, onClickAway}) => {
         // User successfully signed in.
         // Return type determines whether we continue the redirect automatically
         // or whether we leave that to developer to handle.
-        // TODO: use 
-        return false;
+            onLoginCallback();
+            alert({message: 'Successfully signed in', severity: 'success'});
+            dispatch(actionCreators.setUser(authResult.user));
+            getExpenses(authResult.user.uid).then((expensesQuery) => {
+                const expenses = expensesQuery.docs
+                    .map(doc => doc.data())
+                    .map(data => ({...data, date: moment(data.date)}));
+                dispatch(actionCreators.setExpenses(Object.values(expenses)));
+            });
+            return false;
     }}};
 
     firebaseUi.start('#firebaseui-auth-container', config);
 
-    return (<ClickAwayListener onClickAway={onClickAway}>
-        <div className={className} id="firebaseui-auth-container" />
-        </ClickAwayListener>);
+    return (
+        <div className={className} id="firebaseui-auth-container" />);
 }
 
 

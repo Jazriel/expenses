@@ -15,18 +15,20 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core';
+import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
 
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import EuroSymbol from '@material-ui/icons/EuroSymbol';
 import DateRange from '@material-ui/icons/DateRange';
 import Add from '@material-ui/icons/Add';
 
 import Login from '../login/Login';
+import {useSelector} from 'react-redux';
+import {userSelector} from '../redux/userState';
 
 const drawerWidth = 240;
 
@@ -124,23 +126,18 @@ const links = [
 ];
 
 
-export default function MiniDrawer({title, user, children}) {
+export default function MiniDrawer({title, children}) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  const [showLogin, setShowLogin] = useState({button: false, open: false});
+  const [showLogin, setShowLogin] = useState(false);
+  const user = useSelector(userSelector);
   
-  const handleDrawerOpen = () => {setOpen(true);};
-  const handleDrawerClose = () => {setOpen(false);};
-  const handleLoginClose = () => {setShowLogin(({button, open}) => {
-    if (!button) {
-      return {button: false, open: false};
-    } else {
-      return {button: false, open};
-    }
-  })};
-  const handleLoginToogle = () => {setShowLogin(({button, open}) => ({button: true, open: !open}));};
-  
+  const handleDrawerOpen = () => {setOpen(true)};
+  const handleDrawerClose = () => {setOpen(false)};
+  const handleLoginToogle = () => {setShowLogin((open) => !open)};
+  const onLoginCallback = () => {setShowLogin(false)};
+
   return (
     <div className={classes.root}>
       <AppBar
@@ -178,9 +175,12 @@ export default function MiniDrawer({title, user, children}) {
           </div>
         </Toolbar>
       </AppBar>
-      <Login onClickAway={handleLoginClose} className={clsx(classes.loginPopup, {
-              [classes.hide]: !showLogin.open,
-            })}/>
+      <Login className={clsx(classes.loginPopup, {
+              [classes.hide]: !showLogin,
+            })}
+            onLoginCallback={onLoginCallback}
+            />
+
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
