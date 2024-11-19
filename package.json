@@ -9,7 +9,7 @@
     "@material-ui/lab": "^4.0.0-alpha.52",
     "@material-ui/pickers": "^3.2.10",
     "clsx": "^1.1.0",
-    "firebase": "^7.14.3",
+    "firebase": "^10.9.0",
     "firebaseui": "^4.5.0",
     "moment": "^2.25.3",
     "react": "^16.13.1",
